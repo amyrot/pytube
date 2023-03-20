@@ -408,7 +408,10 @@ def get_throttling_plan(js: str):
     plan_regex = re.compile(transform_start)
     match = plan_regex.search(raw_code)
 
-    transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+    try:
+        transform_plan_raw = find_object_from_startpoint(raw_code, match.span()[1] - 1)
+    except:
+        transform_plan_raw = js
 
     # Steps are either c[x](c[y]) or c[x](c[y],c[z])
     step_start = r"c\[(\d+)\]\(c\[(\d+)\](,c(\[(\d+)\]))?\)"
