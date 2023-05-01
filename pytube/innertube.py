@@ -69,7 +69,8 @@ _default_clients = {
     }
 }
 _token_timeout = 1800
-_cache_dir = pathlib.Path(__file__).parent.resolve() / '__cache__'
+#_cache_dir = pathlib.Path(__file__).parent.resolve() / '__cache__'
+_cache_dir = '__cache__'
 _token_file = os.path.join(_cache_dir, 'tokens.json')
 
 
